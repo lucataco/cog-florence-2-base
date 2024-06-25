@@ -7,10 +7,11 @@ build:
   python_packages:
     - "torch==2.1.0"
     - "torchvision"
-    - "transformers"
-    - "einops"
-    - "timm"
+    - "transformers==4.41.2"
+    - "einops==0.8.0"
+    - "timm==1.0.7"
     - "numpy<2"
+    - "matplotlib==3.9.0"
 
   run:
     - pip install flash-attn --no-build-isolation
