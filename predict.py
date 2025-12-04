@@ -83,8 +83,6 @@ class Predictor(BasePredictor):
         text_input: str = Input(description="Text input. Required for: Caption to Phrase Grounding (caption text), Referring Expression Segmentation (expression to segment), Region to Segmentation/Category/Description (region as <loc_x1><loc_y1><loc_x2><loc_y2>), Open Vocabulary Detection (object to detect)", default=None),
     ) -> Output:
         """Run a single prediction on the model"""
-        img = Image.open(image).convert("RGB")
-
         task = TASKS[task_input]
 
         # Tasks that require text_input
@@ -103,6 +101,8 @@ class Predictor(BasePredictor):
             prompt = task
         else:
             prompt = task + text_input
+
+        img = Image.open(image).convert("RGB")
     
         inputs = self.processor(prompt, img, return_tensors="pt").to("cuda")
         generated_ids = self.model.generate(
