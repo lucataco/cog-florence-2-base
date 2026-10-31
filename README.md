@@ -19,3 +19,9 @@ To run a prediction:
 # Output
 
     {'<CAPTION>': 'A green car parked in front of a yellow building.'}
+
+## License
+
+The code in this repository is licensed under the [Apache License 2.0](LICENSE).
+
+The model weights are not covered by this license. [microsoft/Florence-2-base](https://huggingface.co/microsoft/Florence-2-base) is released under the [MIT](https://huggingface.co/microsoft/Florence-2-base/resolve/main/LICENSE) license.
